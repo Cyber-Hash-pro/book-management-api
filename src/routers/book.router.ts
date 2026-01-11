@@ -8,8 +8,8 @@ const router = express.Router();
 const upload = multer();
 
 router.post("/", validate(bookSchema), controller.createBook);
-// router.get("/", controller.getBooks);
-// ZodTyperouter.get("/:id", controller.getBook);
+router.get("/", controller.getBooks);
+router.get("/:id", controller.getBookById);
 // router.put("/:id", controller.updateBook);
 // router.delete("/:id", controller.deleteBook);
 // router.post("/import", upload.single("file"), controller.importBooks);

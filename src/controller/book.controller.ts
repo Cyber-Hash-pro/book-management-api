@@ -25,12 +25,23 @@ try {
     
 };
 const getBooks = (req: Request, res: Response) => {
+  const books = bookService.getAllBooks()
+  return res.status(200).json({ 
+    message: "Books retrieved successfully",
+    books 
+   });
 
+
+
+}
+const getBookById = (req: Request, res: Response) => {
+  const { id } = req.params;
 }
 
 
 const controller = {
   createBook,
-  getBooks
+  getBooks,
+  getBookById
 };
 export default controller;
