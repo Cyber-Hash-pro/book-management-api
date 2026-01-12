@@ -13,6 +13,10 @@ app.get("/", (req, res) => {
 
 app.use('/api/books',bookRouter);
 
+app.get('/health', (req, res) => {
+  res.status(200).send('OK');
+});
+
 // Error processing
 app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
   if (err instanceof Error) {

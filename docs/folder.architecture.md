@@ -1,99 +1,21 @@
-# Naming Conventions Documentation
+# Project Architecture
 
-This document describes the naming conventions used in the **Book Management REST API**
-project. Following consistent naming improves readability, maintainability, and
-team collaboration.
+The project follows a modular layered architecture to separate concerns and ensure maintainability.
 
----
+## Directory Structure
 
-## 1. File & Folder Naming
+- **`src/`**: Main source code directory.
+  - **`app.ts`**: Express application configuration and middleware setup.
+  - **`server.ts`**: Entry point that starts the HTTP server.
+  - **`config/`**: Configuration files and environment variable management.
+  - **`controller/`**: Handles incoming HTTP requests and extracts parameters to pass to services.
+  - **`middlewares/`**: Custom Express middlewares (e.g., validation, file upload handling).
+  - **`models/`**: Data models and TypeScript interface definitions.
+  - **`routers/`**: Route definitions mapping URLs to controller functions.
+  - **`services/`**: Core business logic. Interacts with the data layer (currently an in-memory array).
+  - **`utils/`**: Helper functions and utility classes (e.g., CSV parsing).
+  - **`validators/`**: Zod schemas for request body validation.
+  - **`tests/`**: Integration tests using Supertest.
 
-- **Folders** use `kebab-case`
-  - Example: `book-management-api`, `middlewares`, `controllers`
-
-- **TypeScript files** use `kebab-case`
-  - Example:
-    - `book.controller.ts`
-    - `book.service.ts`
-    - `error.middleware.ts`
-
----
-
-## 2. Route Naming
-
-- Routes follow **RESTful conventions**
-- Use **plural nouns** for collections
-
-| Method | Endpoint | Purpose |
-|------|---------|--------|
-| GET | `/books` | Get all books |
-| GET | `/books/:id` | Get book by ID |
-| POST | `/books` | Create a book |
-| PUT | `/books/:id` | Update a book |
-| DELETE | `/books/:id` | Delete a book |
-| POST | `/books/import` | Bulk import via CSV |
-
----
-
-## 3. Controller Naming
-
-- Controllers are named after the resource
-- Functions describe the **action clearly**
-
-Examples:
-- `getBooks`
-- `getBook`
-- `createBook`
-- `updateBook`
-- `deleteBook`
-- `importBooks`
-
-
----
-
-## 4. Service Naming
-
-- Services handle business logic
-- Function names describe **what they do**
-
-Examples:
-- `getAllBooks`
-- `getBookById`
-- `createBook`
-- `updateBook`
-- `deleteBook`
-- `bulkInsert`
-
-File:
-
----
-
-## 4. Service Naming
-
-- Services handle business logic
-- Function names describe **what they do**
-
-Examples:
-- `getAllBooks`
-- `getBookById`
-- `createBook`
-- `updateBook`
-- `deleteBook`
-- `bulkInsert`
-
----
-File  
-
-## 5. Model Naming
-
-- Models use **PascalCase**
-- Interfaces represent data structure
-
-Example:
-```ts
-export interface Book {
-  id: string;
-  title: string;
-  author: string;
-  publishedYear: number;
-}
+## Data Flow
+`Request -> Router -> Middleware (Validation) -> Controller -> Service -> Model -> Response`
