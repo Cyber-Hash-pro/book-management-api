@@ -78,7 +78,7 @@ book-management-api/
 
 ### Prerequisites
 
-- Node.js (LTS version recommended)
+- Node.js (v18.x or higher recommended)
 - npm or yarn
 
 ### Installation
@@ -91,7 +91,7 @@ book-management-api/
 
 2. **Install dependencies**
    ```bash
-   npm install
+   npm install 
    ```
 
 3. **Set up environment variables**
@@ -99,11 +99,40 @@ book-management-api/
    Create a `.env` file in the root directory:
    ```env
    PORT=3000
+   NODE_ENV=development
    ```
 
-4. **Start the development server**
+### Running the Application
+
+#### Development Mode (with hot-reload)
+
+Start the development server with automatic restart on file changes:
+
+```bash
+npm run dev
+```
+
+The API will be available at `http://localhost:3000`
+
+#### Production Mode
+
+1. **Build the application**
+   
+   Compile TypeScript to JavaScript:
    ```bash
-   npm run dev
+   npm run build
+   ```
+   
+   This creates the `dist/` directory with compiled JavaScript files.
+
+2. **Start the production server**
+   ```bash
+   npm start
+   ```
+   
+   Or directly:
+   ```bash
+   node dist/server.js
    ```
 
    The API will be available at `http://localhost:3000`
