@@ -1,12 +1,15 @@
 import type { Book } from '../models/book.model.js';
 import { v4 as uuid } from "uuid";
 
+// book is Array to simulate DB
 const books: Book[] = [];
 
+// return all books returns Book[] 
 export const getAllBooks = () => books;
 
-export const getBookById = (id: string) =>
-  books.find(book => book.id === id);
+ export const getBookById = (id: string) => {
+  return books.find(book => book.id === id);
+};
 
 export const createBook = (data: Omit<Book, "id">) => {
   const book: Book = { id: uuid(), ...data };
@@ -31,3 +34,5 @@ export const deleteBook = (id: string) => {
 export const bulkInsert = (newBooks: Book[]) => {
   books.push(...newBooks);
 };
+
+

@@ -13,4 +13,12 @@ app.get("/", (req, res) => {
 
 app.use('/api/books',bookRouter);
 
+// Error processing
+app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
+  if (err instanceof Error) {
+    return res.status(400).json({ message: err.message });
+  }
+  return res.status(500).json({ message: "Internal server error" });
+});
+
 export default app;
