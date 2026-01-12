@@ -79,7 +79,7 @@ Consistency in naming helps in quickly navigating and understanding the codebase
 ### Route Paths
 - **Use plural nouns** for resource collections: `/api/books` (not `/api/book`)
 - **Use lowercase** with hyphens for multi-word resources: `/api/book-reviews`
-- **Use specific sub-paths** for special actions: `/api/books/imports`
+- **Use specific sub-paths** for special actions: `/api/books/import`
 - **Use ID parameters** for specific resources: `/api/books/:id`
 
 ### HTTP Methods
@@ -97,7 +97,7 @@ GET    /api/books/:id      - Get specific book
 POST   /api/books          - Create new book
 PUT    /api/books/:id      - Update book
 DELETE /api/books/:id      - Delete book
-POST   /api/books/imports  - Import books from CSV
+POST   /api/books/import  - Import books from CSV
 ```
 
 ## Request/Response Objects

@@ -112,7 +112,7 @@ curl -X POST http://localhost:3000/api/books \
   -d '{"title":"Sample Book","author":"John Doe","publishedYear":2024}'
 
 # Upload CSV file
-curl -X POST http://localhost:3000/api/books/imports \
+curl -X POST http://localhost:3000/api/books/import \
   -F "file=@books.csv"
 ```
 

@@ -44,11 +44,11 @@ describe("Books API Integration Tests", () => {
     expect(res.body.message).toBe("Validation failed");
   });
 
-  it("should import books from CSV via POST /api/books/imports", async () => {
+  it("should import books from CSV via POST /api/books/import", async () => {
     const csvContent = "id,title,author,publishedYear\n1,CSV Book 1,CSV Author 1,2020\n2,CSV Book 2,CSV Author 2,2021";
     
     const res = await request(app)
-      .post("/api/books/imports")
+      .post("/api/books/import")
       .attach("file", Buffer.from(csvContent), "books.csv");
 
     expect(res.status).toBe(200);

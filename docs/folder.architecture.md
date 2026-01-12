@@ -189,7 +189,7 @@ Request → upload.middleware → validate.middleware → Controller
 - `createBook` - Handle POST /api/books
 - `updateBook` - Handle PUT /api/books/:id
 - `deleteBook` - Handle DELETE /api/books/:id
-- `importBooks` - Handle POST /api/books/imports
+- `importBooks` - Handle POST /api/books/import
 
 ### 7. Service Layer
 

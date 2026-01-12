@@ -11,7 +11,7 @@ router.get("/", controller.getBooks);
 router.get("/:id", controller.getBookById);
 router.put("/:id",validate(bookSchema), controller.updateBook);
 router.delete("/:id", controller.deleteBook);
-router.post("/imports", upload.single("file"), controller.importBooks);
+router.post("/import", upload.single("file"), controller.importBooks);
 
 
 

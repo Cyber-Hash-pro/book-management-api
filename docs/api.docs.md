@@ -61,7 +61,7 @@ Base URL: `/api/books`
   - **Content**: `{ "message": "Book deleted successfully" }`
 
 ### 6. Import Books (CSV)
-- **URL**: `/imports`
+- **URL**: `/import`
 - **Method**: `POST`
 - **Content-Type**: `multipart/form-data`
 - **File Key**: `file` (Must be a `.csv` file)

@@ -2,6 +2,11 @@
 
 A robust, production-ready RESTful API for managing a book library with full CRUD operations and CSV import functionality. Built with TypeScript, Express.js, and modern best practices.
 
+## 🔗 Quick Links
+
+- **🚀 Live API**: [https://book-management-api-spff.onrender.com/](https://book-management-api-spff.onrender.com/)
+- **📮 Postman Collection**: [View API Documentation](https://www.postman.com/cyber-rebel/workspace/book-management-api/request/46399359-37a5682b-8595-4ecb-9c38-d1052aaae5d4?action=share&creator=46399359&ctx=documentation)
+
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-blue.svg)](https://www.typescriptlang.org/)
 [![Node.js](https://img.shields.io/badge/Node.js-LTS-green.svg)](https://nodejs.org/)
 [![Express.js](https://img.shields.io/badge/Express.js-5.2.1-lightgrey.svg)](https://expressjs.com/)
@@ -17,6 +22,9 @@ A robust, production-ready RESTful API for managing a book library with full CRU
 - 🏗️ **Clean Architecture** - Separation of concerns with controllers, services, and models
 - 🚀 **Production Ready** - Error handling, logging, and health checks
 - 📊 **File Upload Security** - CSV file validation with size limits (50MB max)
+# Link 
+  # POSTMAN LINK = https://www.postman.com/cyber-rebel/workspace/book-management-api/request/46399359-37a5682b-8595-4ecb-9c38-d1052aaae5d4?action=share&creator=46399359&ctx=documentation
+
 
 ## 🛠️ Tech Stack
 
@@ -162,7 +170,7 @@ http://localhost:3000/api/books
 | POST | `/` | Create a new book |
 | PUT | `/:id` | Update an existing book |
 | DELETE | `/:id` | Delete a book |
-| POST | `/imports` | Import books from CSV file |
+| POST | `/import` | Import books from CSV file |
 
 ### Detailed Documentation
 
@@ -279,7 +287,7 @@ DELETE /api/books/:id
 
 #### 6. Import Books from CSV
 ```http
-POST /api/books/imports
+POST /api/books/import
 Content-Type: multipart/form-data
 ```
 
